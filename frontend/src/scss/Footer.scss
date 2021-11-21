@@ -1,0 +1,100 @@
+@import "../index.scss";
+footer{
+    width: 100%;
+    gap: 35px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    background: $dark-bg;
+
+    img{
+        user-select: none;
+    }
+
+    &>img{
+        height: 250px;
+    }
+
+    .text{
+
+        h1,h3{
+            color: white;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        h3{
+            font-size: 25px;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        p{
+            color: white;
+            font-size: 18px;
+            margin-bottom: 6px;
+            text-align: justify;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .partners{
+            display: flex;
+            gap: 10px;
+
+            img{
+                max-height: 50px;
+                object-fit: contain;
+                max-width: 80px;
+                padding: 8px;
+                border-radius: 6px;
+                background: white;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:960px){
+    footer{
+        &>img{
+            height: 180px;
+        }
+    }
+}
+@media screen and (max-width:730px){
+    footer{
+        &>img{
+            height: 180px;
+        }
+        .text{
+
+            h1,h3{
+                font-size: 35px;
+            }
+    
+            p{
+                font-size: 16px;
+            }
+
+            .partners{
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+@media screen and (max-width:650px){
+    footer{
+        flex-direction: column;
+
+        &>img{
+            height: 220px;
+        }
+    }
+}
+@media screen and (max-width:460px){
+    footer{
+        &>img{
+            display: none;
+        }
+    }
+}

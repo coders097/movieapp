@@ -1,0 +1,207 @@
+@import '../index.scss';
+.Carousal{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: rgb(17, 17, 17);
+    overflow: hidden;
+    position: relative;
+
+    .display{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        .movie-head-card{
+            width: 100%;
+            height: 100%;
+            transition: cubic-bezier(.21,.49,.46,1.17) all 1s;
+            top: 0;
+            left: 0;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+
+            .details{
+                max-width: calc(100% - 250px);
+                bottom: 80px;
+                left: 130px;
+                gap: 15px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+
+                h2{
+                    font-size: 3.6vw;
+                    color: white;
+                    font-weight: 800;
+                    font-family: 'Open Sans', sans-serif;
+                    text-shadow: rgba(0, 0, 0, 0.562) 4px 4px 12px;
+                }
+
+                p{
+                    font-size: 1.3vw;
+                    font-family: 'Poppins', sans-serif;
+                    text-shadow: rgba(0, 0, 0, 0.514) 4px 4px 12px;
+                    color: white;
+                }
+
+                .flow{
+                    display: flex;
+                    gap: 15px;
+                    flex-wrap: wrap;
+
+                    .card{
+                        padding: 10px 17px;
+                        background: rgba(255, 255, 255, 0.788);
+                        border-radius: 6px;
+                        font-weight: 600;
+                        color: rgb(51, 49, 46);
+                        
+                    }
+
+                    .btn-custom{
+                        background: rgb(255, 255, 255);
+                        color: rgb(235, 19, 19);
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .tv-add-on{
+                h4{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 24px;
+                    color: white;
+                    text-shadow: rgba(0, 0, 0, 0.904) 4px 4px 12px;
+                    font-weight: 600;
+                }
+
+                button{
+                    border-radius: 150px;
+                    padding: 12px 24px;
+                }
+            }
+        }
+
+        .--active{
+            opacity: 1;
+            visibility: unset;
+        }
+
+
+    }
+
+    .left{
+        width: 100px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: cubic-bezier(.21,.49,.46,1.17) all 0.2s;
+        opacity: 0;
+        color: white;
+        font-size: 35px;
+        background: linear-gradient(to right,rgba(0, 0, 0, 0.507),rgba(255, 255, 255, 0));
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            opacity: 1;
+        }
+        
+        &:active{
+            transform: translateX(-25px);
+        }
+    }
+
+    .right{
+        width: 100px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        transition: cubic-bezier(.21,.49,.46,1.17) all 0.3s;
+        opacity: 0;
+        color: white;
+        font-size: 35px;
+        background: linear-gradient(to right,rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.507));
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        &:active{
+            transform: translateX(25px);
+        }
+    }
+}
+
+@media screen and (max-width:1000px){
+    .Carousal{
+        .display{
+            .movie-head-card{
+                .details{
+                    max-width: calc(100% - 140px);
+                    left: 70px;
+                    gap: 15px;
+
+                    h2{
+                        font-size: 6vw;
+                    }
+    
+                    p{
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+        }
+        .left{
+            width: 60px;
+        }
+        .right{
+            width: 60px;
+        }
+    }
+    
+}
+@media screen and (max-width:580px){
+    .Carousal{
+        .display{
+            .movie-head-card{
+                .details{
+                    max-width: calc(100% - 120px);
+                    left: 60px;
+                    gap: 10px;
+                    bottom: 35px;
+
+                    h2{
+                        font-size: 8vw;
+                    }
+    
+                    p{
+                        font-size: 4vw;
+                    }
+                    .flow{
+                        .btn{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .left{
+            width: 50px;
+            background: none;
+            opacity: 0.4;
+        }
+        .right{
+            background: none;
+            width: 50px;
+            opacity: 0.4;
+        }
+    }
+}

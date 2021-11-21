@@ -1,0 +1,86 @@
+.HomePage{
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 0px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    &::after{
+        position: absolute;
+        top: 0;
+        content: "";
+        z-index: -1;
+        left: 0;
+        opacity: 0.9;
+        width: 100%;
+        height: 100vh;
+        background: url(../assets/hero-cover.jpg) center no-repeat;
+        background-size: cover;
+    }
+
+    h1{
+        color: white;
+        text-shadow: black 0px 0px 15px;
+        cursor: default;
+        font-size: 5vw;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h2{
+        color: white;
+        cursor: default;
+        text-shadow: black 0px 0px 15px;
+        font-size: 3.4vw;
+        font-family: 'Work Sans', sans-serif;
+    }
+
+    .main-btn{
+        color: rgb(0, 0, 0);
+        background: rgb(255, 254, 254);
+        font-size: 20px;
+        margin: 7px;
+        transition: cubic-bezier(.21,.49,.46,1.17) all 0.2s;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        border: none;
+        border-radius: 7px;
+        padding: 12px 25px;
+
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+
+    span{
+        cursor: default;
+        color: white;
+        font-size: 28px;
+        margin: 15px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .HomePage{
+        padding: 0px 30px;
+
+        h1{
+            font-size: 9vw;
+            text-align: center;
+        }
+        h2{
+            font-size: 5vw;
+        }
+        &>div{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+        }
+    
+    }
+    
+}

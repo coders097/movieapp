@@ -1,0 +1,171 @@
+@import '../index.scss';
+.PartialView{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: fit-content;
+    max-height: 80vh;
+    overflow: auto;
+    border-top-right-radius: 30px;
+    transition: cubic-bezier(0,.83,.84,1.03) all 0.25s;
+    bottom: 0;
+    transform: translateY(100%);
+    left: 0;
+    background: rgba(255, 255, 255, 0.829);
+    backdrop-filter: blur(6px);
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.295) -5px 0px 25px;
+    gap: 20px;
+
+    img{
+        width: 270px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.158) 5px 5px 25px;
+    }
+
+    &>p{
+        transition: cubic-bezier(.21,.49,.46,1.17) all 0.2s;
+        position: absolute;
+        font-size: 25px;
+    }
+    &>p:active{
+        transform: scale(0.9);
+    }
+    &>p:first-of-type{
+        top: 25px;
+        right: 25px;
+    }
+
+    &>p:last-of-type{
+        bottom: 25px;
+        transform: rotate(90deg);
+        border: solid rgba(0, 0, 0, 0.253) 1.5px;
+        border-radius: 5px;
+        right: 25px;
+        padding: 8.5px 10px;
+    }
+    &>p:last-of-type:active{
+        transform: rotate(90deg) scale(0.9);
+    }
+
+    .details{
+        width: calc(100% - 270px);
+        display: flex;
+        padding-right: 15px;
+        flex-direction: column;
+
+        .title{
+            font-size: 3.5vw;
+            font-family: 'poppins', sans-serif;
+            font-weight: 600;
+            color: $dark-text;
+            align-items: center;
+            display: flex;
+            gap: 20px;
+            cursor: default;
+            padding: 0px;
+            margin: 0;
+
+            span{
+                font-size: 20px;
+                padding: 10px 18px;
+                border-radius: 220px;
+                color: white;
+                background: linear-gradient(to right bottom,rgb(211, 1, 130),rgb(132, 0, 255));
+            }
+        }
+
+        .desc{
+            font-size: 20px;
+            cursor: default;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(80, 73, 73);
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .genre{
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            list-style: none;
+
+            li{
+                color: white;
+                cursor: default;
+                font-size: 15px;
+                border-radius: 50px;
+                background: rgb(70, 69, 69);
+                padding: 10px 20px;
+            }
+        }
+
+        .characteristics{
+            display: flex;
+            gap: 2px;
+            border: solid rgba(121, 120, 120, 0.37) 1.5px;
+            border-radius: 8px;
+            width: fit-content;
+            align-items: center;
+            padding: 10px 14px;
+            flex-direction: column;
+
+            h2{
+                color: rgb(54, 53, 50);
+                font-size: 18px;
+            }
+            p{
+                font-size: 26px;
+                background: linear-gradient(to right bottom,rgb(255, 145, 0),rgb(255, 251, 0));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        button{
+            margin-top: auto;
+        }
+    }
+}
+.PartialView--show{
+    transform: translateY(0%);
+}
+@media screen and (max-width:1000px){
+    .PartialView .details .title{
+        font-size: 5vh;
+    }
+}
+@media screen and (max-width:700px){
+    .PartialView{
+        .MovieOrTVHeaderView{
+
+            .details{
+                width: 100%;
+                align-items: center;
+        
+                .genre{
+                    justify-content: center;
+                }
+        
+                button{
+                    margin: 0 auto;
+                }
+
+                .line-flow{
+                    margin-bottom: 15px;
+            
+                    button{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

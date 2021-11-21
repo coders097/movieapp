@@ -1,0 +1,166 @@
+.EpisodeView{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        font-size: 40px;
+        font-family: 'Poppins', sans-serif;            
+        font-weight: 600;
+        cursor: default;
+        color: rgb(88, 88, 88);
+        user-select: none;
+        margin-bottom: 10px;
+    }
+
+    .season{
+        width: 100%;
+
+        .overview{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            padding-bottom: 15px;
+            border-bottom: solid 1.5px rgba(0, 0, 0, 0.144);
+
+            img{
+                height: 100%;
+                max-height: 350px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            &>.details{
+                width: 100%;
+                overflow: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                h1{
+                    cursor: default;
+                    user-select: none;
+                    font-size: 24px;
+                    font-family: 'Poppins', sans-serif;            
+                    font-weight: 400;
+                }
+
+                p{
+                    font-size: 20px;
+                    text-align: justify;
+                    cursor: default;
+                    user-select: none;
+                    font-family: 'Work Sans', sans-serif;
+                    font-weight: 400;
+                }
+
+                h3{
+                    font-size: 22px;
+                    font-family: 'Poppins', sans-serif;            
+                    font-weight: 400;
+                    cursor: default;
+                    user-select: none;
+                    color: grey;
+
+                    span{
+                        font-weight: 500;
+                        color: rgb(218, 149, 0);
+                    }
+                }
+
+                h4{
+                    cursor: default;
+                    user-select: none;
+                    margin-top: auto;
+                    font-size: 26px;
+                }
+            }
+        }
+
+        
+        .episodes{
+            padding: 20px;
+            background: #f9f9f9;
+            display: flex;
+            gap: 15px;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            flex-direction: column;
+
+            .episode{
+                width: 100%;
+                display: flex;
+                border-bottom: solid 1.5px rgba(114, 114, 114, 0.144);
+                padding-bottom: 15px;
+                gap: 15px;
+
+                img{
+                    border-radius: 10px;
+                    width: 250px;
+                    object-fit: contain;
+                }
+
+                .details{
+                    width: calc(100% - 250px);
+
+                    h2{
+                        font-size: 22px;
+                        font-family: 'Poppins', sans-serif;            
+                        font-weight: 400;
+                        cursor: default;
+                        user-select: none;
+                    }
+
+                    p{
+                        font-size: 18px;
+                        font-family: 'Work Sans', sans-serif;           
+                        font-weight: 400;
+                        color: grey;
+                        cursor: default;
+                        user-select: none;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+
+        .--episodes-visible{
+            height: unset;
+            opacity: 1;
+            visibility: unset;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .EpisodeView{
+        h2{
+            text-align: center;
+            font-size: 30px;
+        }
+        .season{
+            .overview{
+                flex-direction: column;
+            }
+
+            .episodes{
+    
+                .episode{
+                    flex-direction: column;
+    
+                    img{
+                        width: 100%;
+                    }
+
+                    .details{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }    
+}

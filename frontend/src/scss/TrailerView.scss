@@ -1,0 +1,62 @@
+.TailerView{
+    display:flex;
+    flex-direction:row-reverse;
+    gap:20px;
+    min-height:calc(100vw / 2.7);
+    padding:20px;
+
+    div{
+        width:35%;
+        display:flex;
+        border-radius:15px;
+        justify-content:center;
+        align-items:center;
+
+        h1{
+            font-family:'Poppins', sans-serif;
+            font-size:45px;
+            width:250px;
+            color:white;
+            text-align:center;
+        }
+    }
+
+    iframe{
+        width:65%;
+        border-radius:15px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .TailerView{
+        gap:10px;
+        flex-direction: column;
+
+        div{
+            width: 100%;
+            padding: 15px 0px;
+
+            h1{
+                width: 90%;
+                font-size:30px;
+            }
+        }
+
+        iframe{
+            width:100%;
+            height: calc(100vw / 2);
+            border-radius:15px;
+        }
+    }
+}
+@media screen and (max-width:490px) {
+    .TailerView{
+        div{
+            padding: 10px 0px;
+
+            h1{
+                font-size:25px;
+            }
+        }
+    }
+}
